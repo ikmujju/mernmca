@@ -24,7 +24,7 @@ app.post("/student",async (req,res)=>{
     res.send({message:"Student added...."});
 });
 
-app.get("/add", async(req,res)=>{
+app.get("/student", async(req,res)=>{
     const student=await Student.find();
     res.send(student);
 });

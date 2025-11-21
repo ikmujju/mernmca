@@ -8,7 +8,7 @@ export default function UpdateStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get(`/add`).then((res) => {
+    api.get(`/student`).then((res) => {
       const student = res.data.find((st) => st._id === id);
       if (student) setForm(student);
     });

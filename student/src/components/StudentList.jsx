@@ -6,7 +6,7 @@ export default function StudentList() {
   const [students, setStudents] = useState([]);
 
   const getStudents = async () => {
-    const res = await api.get("/add");
+    const res = await api.get("/student");
     setStudents(res.data);
   };
 
@@ -29,9 +29,9 @@ export default function StudentList() {
           <p><b>Name:</b> {s.name}</p>
           <p><b>Age:</b> {s.age}</p>
           <p><b>Course:</b> {s.course}</p>
-          <Link to={`/update/${s._id}`}><button>Edit</button></Link>
+          <Link to={`/update/${s.id}`}><button>Edit</button></Link>
           &nbsp;
-          <button onClick={() => deleteStudent(s._id)}>Delete</button>
+          <button onClick={() => deleteStudent(s.id)}>Delete</button>
         </div>
       ))}
     </div>
